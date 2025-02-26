@@ -6,10 +6,15 @@ const page = async () => {
   });
   const article = await data.json();
 
+  type Article = {
+    id: string;
+    title: string;
+  };
+
   return (
     <>
       {article &&
-        article.map((data) => {
+        article.map((data: Article) => {
           return (
             <div key={data.id} className="card bg-base-100 w-96 shadow-xl">
               <figure>
