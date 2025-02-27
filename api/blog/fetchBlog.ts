@@ -1,6 +1,6 @@
 import { client } from "../../libs/microcms";
 
-const fetchData = async () => {
+const fetchBlog = async () => {
   const data = await client.get({
     endpoint: "blogs",
     queries: { limit: 20, fields: "id,title,createdAt,eyecatch" },
@@ -13,4 +13,4 @@ const fetchData = async () => {
   return data.contents;
 };
 
-export default fetchData;
+export default fetchBlog;

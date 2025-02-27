@@ -1,9 +1,9 @@
 import Title from "../../components/Title";
-import fetchData from "../../api/blog/fetchBlog";
 import Card from "../../components/Card";
+import fetchBlog from "../../api/blog/fetchBlog";
 
 const page = async () => {
-  const blogData = await fetchData();
+  const blogData = await fetchBlog();
 
   return (
     <>
