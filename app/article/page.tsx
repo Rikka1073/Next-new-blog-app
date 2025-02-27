@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const page = async () => {
   const data = await fetch("https://qiita.com/api/v2/authenticated_user/items?page=1&per_page=20", {
     headers: {
@@ -10,10 +12,12 @@ const page = async () => {
   }
 
   const article = await data.json();
+  console.log(article);
 
   type Article = {
     id: string;
     title: string;
+    url: string;
   };
 
   return (
@@ -22,17 +26,21 @@ const page = async () => {
         {article &&
           article.map((data: Article) => {
             return (
-              <div key={data.id} className="card bg-base-100 shadow-xl">
-                <figure>
-                  <img
-                    src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                    alt="Shoes"
-                  />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title">{data.title}</h2>
+              <Link key={data.id} href={data.url}>
+                <div className="card bg-base-100 shadow-xl h-80">
+                  <figure>
+                    <img
+                      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                      alt="Shoes"
+                    />
+                  </figure>
+                  <div className="card-body">
+                    <h2 className="card-title text-md">
+                      {data.title.length > 30 ? data.title.substring(0, 30) + "..." : data.title}
+                    </h2>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
       </div>
