@@ -1,41 +1,14 @@
-import Link from "next/link";
-import { client } from "../../libs/microcms";
-import Image from "next/image";
 import Title from "../../components/Title";
 import fetchData from "../../api/blog/fetchBlog";
+import Card from "../../components/Card";
 
 const page = async () => {
-  const data = await fetchData();
+  const blogData = await fetchData();
 
   return (
     <>
       <Title>Blog一覧</Title>
-      <div className="grid gap-4 px-[10%] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:px-0">
-        {data.map((data) => {
-          return (
-            <Link key={data.id} href={`/blog/${data.id}`}>
-              <div className="card bg-white h-80 shadow-xl">
-                <Image
-                  src={data.eyecatch.url}
-                  sizes="100vw"
-                  width={300}
-                  height={300}
-                  alt=""
-                  className="h-1/2 rounded-t-lg"
-                  priority={true}
-                />
-                <div className="card-body h-1/2">
-                  <h2 className="card-title">
-                    {data.title.length > 30
-                      ? data.title.substring(0, 30) + "..."
-                      : data.title}
-                  </h2>
-                </div>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
+      <Card data={blogData} url="blog" />
     </>
   );
 };
