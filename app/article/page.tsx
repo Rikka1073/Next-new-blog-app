@@ -18,6 +18,8 @@ const page = async () => {
     id: string;
     title: string;
     url: string;
+    likes_count: number;
+    page_views_count: number;
   };
 
   return (
@@ -34,10 +36,18 @@ const page = async () => {
                       alt="Shoes"
                     />
                   </figure>
-                  <div className="card-body">
+                  <div className="card-body h-1/2">
                     <h2 className="card-title text-md">
                       {data.title.length > 30 ? data.title.substring(0, 30) + "..." : data.title}
                     </h2>
+                    <div className="flex gap-2">
+                      {/* <p className="flex-grow-0">Likes {data.likes_count}</p> */}
+                      <div className="badge badge-sm border-black">Likes {data.likes_count}</div>
+                      {/* <p className="flex-grow-0 ">Views {data.page_views_count}</p> */}
+                      <div className="badge badge-sm border-black">
+                        Views {data.page_views_count}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </Link>
