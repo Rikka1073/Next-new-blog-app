@@ -11,6 +11,9 @@ const Header = () => {
           <Link href="/article" className="text-xl">
             Article
           </Link>
+          <Link href="/blog" className="text-xl">
+            Blog
+          </Link>
         </nav>
       </div>
     </header>
