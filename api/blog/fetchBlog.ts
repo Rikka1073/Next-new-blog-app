@@ -1,9 +1,9 @@
 import { client } from "../../libs/microcms";
 
-const fetchBlog = async () => {
+const fetchBlog = async ({ limit }: { limit: number }) => {
   const data = await client.get({
     endpoint: "blogs",
-    queries: { limit: 20, fields: "id,title,createdAt,eyecatch" },
+    queries: { limit: limit, fields: "id,title,createdAt,eyecatch" },
   });
 
   if (!data.contents) {

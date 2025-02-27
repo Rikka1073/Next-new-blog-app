@@ -3,7 +3,7 @@ import Card from "../../components/Card";
 import fetchArticle from "../../api/article/fetchArticle";
 
 const page = async () => {
-  const articleData = await fetchArticle();
+  const articleData = await fetchArticle({ limit: 16 });
   return (
     <>
       <Title>Article一覧</Title>

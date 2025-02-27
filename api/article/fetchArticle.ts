@@ -1,6 +1,6 @@
-const fetchArticle = async () => {
+const fetchArticle = async ({ limit }: { limit: number }) => {
   const data = await fetch(
-    "https://qiita.com/api/v2/authenticated_user/items?page=1&per_page=20",
+    `https://qiita.com/api/v2/authenticated_user/items?page=1&per_page=${limit}`,
     {
       headers: {
         Authorization: `Bearer ${process.env.QIITA_API_TOKEN}`,

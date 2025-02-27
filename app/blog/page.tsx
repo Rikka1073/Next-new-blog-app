@@ -3,7 +3,7 @@ import Card from "../../components/Card";
 import fetchBlog from "../../api/blog/fetchBlog";
 
 const page = async () => {
-  const blogData = await fetchBlog();
+  const blogData = await fetchBlog({ limit: 12 });
 
   return (
     <>
