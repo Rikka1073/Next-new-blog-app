@@ -9,7 +9,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="bg-[#F1E9DA]">
+        <div className="bg-[#F1E9DA] pb-20">
           <div className="mx-auto max-w-6xl">
             <Header />
             {children}
