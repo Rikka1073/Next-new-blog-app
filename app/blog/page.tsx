@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { client } from "../../libs/microcms";
 import Image from "next/image";
+import Title from "../../components/Title";
 
 const page = async () => {
   const fetchData = async () => {
@@ -19,7 +20,7 @@ const page = async () => {
 
   return (
     <>
-      <div>Blogです</div>
+      <Title>Blog一覧</Title>
       <div className="grid gap-4 px-[10%] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:px-0">
         {data.map((data) => {
           return (

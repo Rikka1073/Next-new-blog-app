@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Title from "../../components/Title";
 
 const page = async () => {
   const data = await fetch(
@@ -27,6 +28,7 @@ const page = async () => {
 
   return (
     <>
+      <Title>Article一覧</Title>
       <div className="grid gap-4 px-[10%] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:px-0">
         {article &&
           article.map((data: Article) => {
