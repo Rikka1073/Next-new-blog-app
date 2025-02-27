@@ -3,7 +3,7 @@ import Title from "../components/Title";
 export default function Page() {
   return (
     <>
-      <Title />
+      <Title>HOME</Title>
       <button className="btn">Default</button>
     </>
   );
