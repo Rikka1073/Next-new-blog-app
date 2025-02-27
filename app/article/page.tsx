@@ -5,6 +5,7 @@ const page = async () => {
     },
   });
   const article = await data.json();
+  console.log("Fetched data:", article);
 
   type Article = {
     id: string;
