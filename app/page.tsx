@@ -32,9 +32,11 @@ export default async function Page() {
           <Card data={articleData} url="article" />
         </div>
         <div className="text-center">
-          <button className="btn btn-outline btn-wide rounded-lg border-[#75593D] text-[#75593D] hover:border-2 hover:text-[16px] bg-[#F1E9DA]">
-            <Link href="/article">もっと見る</Link>
-          </button>
+          <Link href="/article">
+            <div className="btn btn-outline btn-wide rounded-lg border-[#75593D] text-[#75593D] hover:border-2 hover:text-[16px] bg-[#F1E9DA]">
+              もっと見る
+            </div>
+          </Link>
         </div>
       </div>
       <div>
@@ -45,9 +47,11 @@ export default async function Page() {
           <Card data={blogData} url="blog" />
         </div>
         <div className="text-center">
-          <button className="btn btn-outline btn-wide rounded-lg border-[#75593D] text-[#75593D] hover:border-2 hover:text-[16px] bg-[#F1E9DA]">
-            <Link href="/blog">もっと見る</Link>
-          </button>
+          <Link href="/blog">
+            <div className="btn btn-outline btn-wide rounded-lg border-[#75593D] text-[#75593D] hover:border-2 hover:text-[16px] bg-[#F1E9DA]">
+              もっと見る
+            </div>
+          </Link>
         </div>
       </div>
     </>
