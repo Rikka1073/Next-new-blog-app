@@ -1,3 +1,4 @@
+import Link from "next/link";
 import fetchArticle from "../api/article/fetchArticle";
 import fetchBlog from "../api/blog/fetchBlog";
 import Card from "../components/Card";
@@ -9,17 +10,17 @@ export default async function Page() {
   return (
     <>
       <Title>HOME</Title>
-      <div className="leading-2 mb-10">
-        <p className="text-center text-[#75593D] mb-5">
+      <div className="leading-loose mb-10">
+        <p className="text-center text-[#75593D]">
           エンジニアとして4年間、さまざまな技術に触れながら試行錯誤してきました。
         </p>
-        <p className="text-center text-[#75593D] mb-5">
+        <p className="text-center text-[#75593D]">
           このブログでは、日々の開発で得た知見や、挑戦した技術について記事をまとめています。
         </p>
-        <p className="text-center text-[#75593D] mb-5">
+        <p className="text-center text-[#75593D]">
           TOPページでは、深掘りした技術記事（Article）と、日々の学びや気づきを綴ったブログ（Blog）をそれぞれ4つずつ掲載しています。
         </p>
-        <p className="text-center text-[#75593D] mb-5">
+        <p className="text-center text-[#75593D]">
           新しい技術に触れたい方や、同じ課題に直面しているエンジニアの参考になれば幸いです。
         </p>
       </div>
@@ -31,8 +32,8 @@ export default async function Page() {
           <Card data={articleData} url="article" />
         </div>
         <div className="text-center">
-          <button className="btn btn-outline btn-wide rounded-lg border-[#75593D] text-[#75593D] hover:border-2 hover:text-[16px] bg-[#F1E9DA] ">
-            もっと見る
+          <button className="btn btn-outline btn-wide rounded-lg border-[#75593D] text-[#75593D] hover:border-2 hover:text-[16px] bg-[#F1E9DA]">
+            <Link href="/article">もっと見る</Link>
           </button>
         </div>
       </div>
@@ -45,7 +46,7 @@ export default async function Page() {
         </div>
         <div className="text-center">
           <button className="btn btn-outline btn-wide rounded-lg border-[#75593D] text-[#75593D] hover:border-2 hover:text-[16px] bg-[#F1E9DA]">
-            もっと見る
+            <Link href="/blog">もっと見る</Link>
           </button>
         </div>
       </div>
