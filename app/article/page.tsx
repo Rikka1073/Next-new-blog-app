@@ -4,6 +4,11 @@ const page = async () => {
       Authorization: `Bearer ${process.env.QIITA_API_TOKEN}`,
     },
   });
+
+  if (!data.ok) {
+    throw new Error("Failed to fetch data");
+  }
+
   const article = await data.json();
   console.log("Fetched data:", article);
 
