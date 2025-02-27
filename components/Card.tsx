@@ -16,7 +16,7 @@ type propsData = {
 
 const Card = ({ data, url }) => {
   return (
-    <div className="grid gap-4 px-[10%] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:px-0">
+    <div className="grid gap-4 px-[10%] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:px-0 rounded-lg">
       {data &&
         data.map((item: propsData) => {
           return (
@@ -24,11 +24,11 @@ const Card = ({ data, url }) => {
               key={item.id}
               href={url && url === "article" ? item.url : `/blog/${item.id}`}
             >
-              <div className="card bg-white h-80 shadow-xl">
+              <div className="card bg-white h-80 shadow-xl rounded-lg">
                 <Image
                   src={url && url === "blog" ? item.eyecatch.url : img}
                   sizes="100vw"
-                  width={300}
+                  width={600}
                   height={300}
                   alt=""
                   className="h-1/2 rounded-t-lg"
@@ -40,6 +40,16 @@ const Card = ({ data, url }) => {
                       ? item.title.substring(0, 30) + "..."
                       : item.title}
                   </h2>
+                  {url && url === "article" && (
+                    <div className="flex gap-2">
+                      <div className="badge badge-sm border-black text-[10px] lg:text-xs">
+                        Likes {item.likes_count}
+                      </div>
+                      <div className="badge badge-sm border-black text-[10px] lg:text-xs">
+                        Views {item.page_views_count}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </Link>
