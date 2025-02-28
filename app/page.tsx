@@ -3,6 +3,7 @@ import fetchBlog from "../api/blog/fetchBlog";
 import Card from "../components/Card";
 import Title from "../components/Title";
 import Button from "../features/Home/Button";
+import SubTitle from "../features/Home/SubTitle";
 
 export default async function Page() {
   const articleData = await fetchArticle({ limit: 4 });
@@ -25,18 +26,14 @@ export default async function Page() {
         </p>
       </div>
       <div className="mb-15">
-        <h2 className="mb-5 text-center text-lg font-bold text-[#75593D]">
-          Article
-        </h2>
+        <SubTitle>Article</SubTitle>
         <div className="mb-4">
           <Card data={articleData} url="article" />
         </div>
         <Button url="/article" />
       </div>
       <div>
-        <h2 className="mb-5 text-center text-lg font-bold text-[#75593D]">
-          Blog
-        </h2>
+        <SubTitle>Blog</SubTitle>
         <div className="mb-4">
           <Card data={blogData} url="blog" />
         </div>
