@@ -4,10 +4,10 @@ import Title from "../components/Title";
 
 describe("Title", () => {
   it("タイトルがあること", async () => {
-    render(<Title />);
+    render(<Title>HOME</Title>);
     await waitFor(() => {
       const title = screen.getByTestId("title");
-      expect(title).toBeInTheDocument();
+      expect(title).toHaveTextContent("HOME");
     });
     screen.debug();
   });
