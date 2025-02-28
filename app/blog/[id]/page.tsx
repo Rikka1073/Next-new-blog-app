@@ -40,7 +40,7 @@ const page = async ({ params }) => {
               alt={item.title}
               className="mx-auto mb-5"
             />
-            <div>{sanitizeText(item.content)}</div>
+            <div className="leading-6">{sanitizeText(item.content)}</div>
           </div>
         ))}
     </div>
