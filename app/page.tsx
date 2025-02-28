@@ -3,7 +3,7 @@ import fetchArticle from "../api/article/fetchArticle";
 import fetchBlog from "../api/blog/fetchBlog";
 import Card from "../components/Card";
 import Title from "../components/Title";
-import Button from "../features/Button";
+import Button from "../features/Home/Button";
 
 export default async function Page() {
   const articleData = await fetchArticle({ limit: 4 });

@@ -2,8 +2,7 @@ import "@testing-library/jest-dom";
 import { render, screen, waitFor } from "@testing-library/react";
 import Title from "../components/Title";
 import Header from "../components/Header";
-import Page from "../app/page";
-import Button from "../features/Button";
+import Button from "../features/Home/Button";
 
 describe("Title", () => {
   it("タイトルがあること", async () => {
