@@ -6,11 +6,11 @@ import Title from "../components/Title";
 
 export default async function Page() {
   const articleData = await fetchArticle({ limit: 4 });
-  const blogData = await fetchBlog({ limit: 4 });
+  const blogData = await fetchBlog({ limit: 4, id: "" });
   return (
     <>
       <Title>HOME</Title>
-      <div className="leading-loose mb-10">
+      <div className="leading-loose mb-10 px-[10%]">
         <p className="text-center text-[#75593D]">
           エンジニアとして4年間、さまざまな技術に触れながら試行錯誤してきました。
         </p>
@@ -18,7 +18,7 @@ export default async function Page() {
           このブログでは、日々の開発で得た知見や、挑戦した技術について記事をまとめています。
         </p>
         <p className="text-center text-[#75593D]">
-          TOPページでは、深掘りした技術記事（Article）と、日々の学びや気づきを綴ったブログ（Blog）をそれぞれ4つずつ掲載しています。
+          深掘りした技術記事（Article）と、日々の学びや気づきを綴ったブログ（Blog）をそれぞれ4つずつ掲載しています。
         </p>
         <p className="text-center text-[#75593D]">
           新しい技術に触れたい方や、同じ課題に直面しているエンジニアの参考になれば幸いです。
