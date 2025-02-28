@@ -18,7 +18,6 @@ const fetchBlog = async ({ limit, id }: Blog) => {
   if (!data.contents) {
     throw new Error("No data");
   }
-  console.log(data.contents);
   return data.contents;
 };
 
