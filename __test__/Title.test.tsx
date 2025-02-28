@@ -3,6 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import Title from "../components/Title";
 import Header from "../components/Header";
 import Page from "../app/page";
+import Button from "../features/Button";
 
 describe("Title", () => {
   it("タイトルがあること", async () => {
@@ -20,6 +21,16 @@ describe("Header", () => {
     await waitFor(() => {
       const header = screen.getByTestId("header");
       expect(header).toBeVisible();
+    });
+  });
+});
+
+describe("Button", () => {
+  it("もっと見るボタンがあること", async () => {
+    render(<Button url="url" />);
+    await waitFor(() => {
+      const button = screen.getByTestId("button");
+      expect(button).toHaveTextContent("もっと見る");
     });
     screen.debug();
   });
