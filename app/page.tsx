@@ -1,4 +1,3 @@
-import Link from "next/link";
 import fetchArticle from "../api/article/fetchArticle";
 import fetchBlog from "../api/blog/fetchBlog";
 import Card from "../components/Card";
