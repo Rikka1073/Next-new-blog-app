@@ -3,6 +3,7 @@ import fetchArticle from "../api/article/fetchArticle";
 import fetchBlog from "../api/blog/fetchBlog";
 import Card from "../components/Card";
 import Title from "../components/Title";
+import Button from "../features/Button";
 
 export default async function Page() {
   const articleData = await fetchArticle({ limit: 4 });
@@ -31,13 +32,7 @@ export default async function Page() {
         <div className="mb-4">
           <Card data={articleData} url="article" />
         </div>
-        <div className="text-center">
-          <Link href="/article">
-            <div className="btn btn-outline btn-wide rounded-lg border-[#75593D] text-[#75593D] hover:border-2 hover:text-[16px] bg-[#F1E9DA]">
-              もっと見る
-            </div>
-          </Link>
-        </div>
+        <Button url="/article" />
       </div>
       <div>
         <h2 className="text-lg text-center mb-5 text-[#75593D] font-bold">
@@ -46,13 +41,7 @@ export default async function Page() {
         <div className="mb-4">
           <Card data={blogData} url="blog" />
         </div>
-        <div className="text-center">
-          <Link href="/blog">
-            <div className="btn btn-outline btn-wide rounded-lg border-[#75593D] text-[#75593D] hover:border-2 hover:text-[16px] bg-[#F1E9DA]">
-              もっと見る
-            </div>
-          </Link>
-        </div>
+        <Button url="/blog" />
       </div>
     </>
   );
