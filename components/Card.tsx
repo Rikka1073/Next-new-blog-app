@@ -16,7 +16,7 @@ type propsData = {
 
 const Card = ({ data, url }) => {
   return (
-    <div className="grid gap-4 px-[10%] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:px-0 rounded-lg">
+    <div className="grid gap-4 rounded-lg px-[10%] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:px-0">
       {data &&
         data.map((item: propsData) => {
           return (
@@ -24,7 +24,7 @@ const Card = ({ data, url }) => {
               key={item.id}
               href={url && url === "article" ? item.url : `/blog/${item.id}`}
             >
-              <div className="card bg-white h-80 shadow-xl rounded-lg">
+              <div className="card h-80 rounded-lg bg-white shadow-xl">
                 <Image
                   src={url && url === "blog" ? item.eyecatch.url : img}
                   sizes="100vw"

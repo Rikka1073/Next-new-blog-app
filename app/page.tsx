@@ -11,7 +11,7 @@ export default async function Page() {
   return (
     <>
       <Title>HOME</Title>
-      <div className="leading-loose mb-10 px-[10%]">
+      <div className="mb-10 px-[10%] leading-loose">
         <p className="text-center text-[#75593D]">
           エンジニアとして4年間、さまざまな技術に触れながら試行錯誤してきました。
         </p>
@@ -26,7 +26,7 @@ export default async function Page() {
         </p>
       </div>
       <div className="mb-15">
-        <h2 className="text-lg text-center mb-5 text-[#75593D] font-bold">
+        <h2 className="mb-5 text-center text-lg font-bold text-[#75593D]">
           Article
         </h2>
         <div className="mb-4">
@@ -35,7 +35,7 @@ export default async function Page() {
         <Button url="/article" />
       </div>
       <div>
-        <h2 className="text-lg text-center mb-5 text-[#75593D] font-bold">
+        <h2 className="mb-5 text-center text-lg font-bold text-[#75593D]">
           Blog
         </h2>
         <div className="mb-4">

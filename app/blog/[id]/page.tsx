@@ -27,9 +27,9 @@ const page = async ({ params }) => {
         blogData.map((item) => (
           <div
             key={item.id}
-            className="max-w-3xl mx-auto px-[10%] box-content text-[#75593D]"
+            className="mx-auto box-content max-w-3xl px-[10%] text-[#75593D]"
           >
-            <h2 className="text-lg text-left mb-5 text-[#75593D] font-bold">
+            <h2 className="mb-5 text-left text-lg font-bold text-[#75593D]">
               {item.title}
             </h2>
             <div className="mb-5">{formatDate(item.createdAt)}</div>
