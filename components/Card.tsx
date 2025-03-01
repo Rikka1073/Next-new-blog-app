@@ -24,7 +24,10 @@ const Card = ({ data, url }) => {
               key={item.id}
               href={url && url === "article" ? item.url : `/blog/${item.id}`}
             >
-              <div className="card h-80 rounded-lg bg-white shadow-xl">
+              <div
+                className="card h-80 rounded-lg bg-white shadow-xl"
+                data-testid="card"
+              >
                 <Image
                   src={url && url === "blog" ? item.eyecatch.url : img}
                   sizes="100vw"
