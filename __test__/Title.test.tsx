@@ -41,11 +41,25 @@ jest.mock("../api/blog/fetchBlog", () => ({
 }));
 
 describe("Title", () => {
-  it("タイトルがあること", async () => {
+  it("HOMEのタイトルがあること", async () => {
     render(<Title>HOME</Title>);
     await waitFor(() => {
       const title = screen.getByTestId("title");
       expect(title).toHaveTextContent("HOME");
+    });
+  });
+  it("Article一覧のタイトルがあること", async () => {
+    render(<Title>Article一覧</Title>);
+    await waitFor(() => {
+      const title = screen.getByTestId("title");
+      expect(title).toHaveTextContent("Article一覧");
+    });
+  });
+  it("Blog一覧のタイトルがあること", async () => {
+    render(<Title>Blog一覧</Title>);
+    await waitFor(() => {
+      const title = screen.getByTestId("title");
+      expect(title).toHaveTextContent("Blog一覧");
     });
   });
 });
@@ -182,7 +196,5 @@ describe("Card", () => {
       expect(card[2]).toHaveTextContent("三つ目のブログ");
       expect(card[3]).toHaveTextContent("四つ目のブログ");
     });
-
-    screen.debug();
   });
 });
