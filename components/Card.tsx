@@ -30,7 +30,6 @@ const Card = ({ data, url }) => {
               >
                 <Image
                   src={url && url === "blog" ? item.eyecatch.url : img}
-                  sizes="100vw"
                   width={600}
                   height={300}
                   alt=""
